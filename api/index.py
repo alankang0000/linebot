@@ -44,7 +44,7 @@ def echo(event):
             )
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=response)
+            TextSendMessage(text=response["choices"][0]["text"])
             )
     else:
         line_bot_api.reply_message(
