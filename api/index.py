@@ -32,20 +32,19 @@ def callback():
 @line_handler.add(MessageEvent, message=TextMessage)
 def echo(event):
     if (event.message.text[:5] == "@小小秘豬"):
-        response_text = event.message.text[6:]
+        response_text = event.message.text[5:]
         response = openai.Completion.create(
             model="code-davinci-002",
-            prompt="response_text\n",
+            prompt= response_text+"\n",
             temperature=0,
             max_tokens=60,
             top_p=1,
             frequency_penalty=0.5,
             presence_penalty=0,
-            stop=["@小小秘豬"]
             )
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=response_text)
+            TextSendMessage(text=response)
             )
     else:
         line_bot_api.reply_message(
