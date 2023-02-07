@@ -36,7 +36,7 @@ def echo(event):
         response = openai.Completion.create(
             model="code-davinci-002",
             prompt= response_text,
-            temperature=0,
+            temperature=0.1,
             max_tokens=200,
             top_p=1,
             frequency_penalty=0.5,
@@ -44,7 +44,7 @@ def echo(event):
             )
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=response["choices"][0]["text"].replace('\n',''))
+            TextSendMessage(text=response["choices"][0]["text"].replace('\n'))
             )
     else:
         line_bot_api.reply_message(
