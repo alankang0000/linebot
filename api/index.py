@@ -29,14 +29,13 @@ def callback():
     return 'OK'
 
 
-@line_handler(MessageEvent, message=TextMessage)
+@line_handler.add(MessageEvent, message=TextMessage)
 def echo(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text)
     )
-
-
+    return
 
 
 
