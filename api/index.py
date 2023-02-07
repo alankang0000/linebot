@@ -35,7 +35,7 @@ def echo(event):
         response_text = event.message.text[5:]
         response = openai.Completion.create(
             model="code-davinci-002",
-            prompt= response_text+"\n",
+            prompt= response_text,
             temperature=0,
             max_tokens=60,
             top_p=1,
