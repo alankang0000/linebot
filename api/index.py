@@ -31,7 +31,7 @@ def callback():
 
 @line_handler.add(MessageEvent, message=TextMessage)
 def echo(event):
-    if (event.message.text[:7] == "@小小秘豬:"):
+    if (event.message.text[:6] == "@小小秘豬:"):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=event.message.text)
