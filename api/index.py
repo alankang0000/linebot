@@ -29,13 +29,12 @@ def callback():
     return 'OK'
 
 
-@line_handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    if event.message.text == "說話":
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="我可以說話囉，歡迎來跟我互動 ^_^ "))
-        return
+@line_handler(MessageEvent, message=TextMessage)
+def echo(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text)
+    )
 
 
 
