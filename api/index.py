@@ -41,7 +41,7 @@ def echo(event):
             model="code-davinci-002",
             prompt="\"\"\"\n"+response_text+"\n\"\"\"",
             temperature=0.05,
-            max_tokens=100,
+            max_tokens=200,
             top_p=1,
             frequency_penalty=0.0,
             presence_penalty=0.2,
