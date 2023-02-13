@@ -39,13 +39,12 @@ def echo(event):
         response_text = event.message.text[4:]
         response = openai.Completion.create(
             model="code-davinci-002",
-            prompt="\"\"\"\n"+response_text+"\n\"\"\" ",
+            prompt="\"\"\"\n"+response_text+"\n\"\"\"",
             temperature=0.05,
-            max_tokens=250,
+            max_tokens=100,
             top_p=1,
             frequency_penalty=0.0,
             presence_penalty=0.2,
-            stop=["\n"]
         )
         line_bot_api.reply_message(
             event.reply_token,
