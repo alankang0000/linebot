@@ -45,7 +45,7 @@ def echo(event):
             top_p=1,
             frequency_penalty=0.0,
             presence_penalty=0.2,
-
+            stop=["\n"]
         )
         line_bot_api.reply_message(
             event.reply_token,
