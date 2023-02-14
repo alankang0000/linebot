@@ -41,10 +41,11 @@ def echo(event):
             model="code-davinci-002",
             prompt="\"\"\"\n"+response_text+"\n\"\"\" ",
             temperature=0.05,
-            max_tokens=200,
+            max_tokens=250,
             top_p=1,
             frequency_penalty=0.2,
             presence_penalty=0.1,
+            stop=["\"\"\"\n"+response_text+"\n\"\"\" "]
         )
         line_bot_api.reply_message(
             event.reply_token,
