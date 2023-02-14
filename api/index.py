@@ -49,7 +49,7 @@ def echo(event):
         )
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=response["choices"][0]["text"])
+            TextSendMessage(text=response["choices"][0]["text"].strip())
         )
     else:
         line_bot_api.reply_message(
