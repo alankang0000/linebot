@@ -43,7 +43,7 @@ def echo(event):
             temperature=0.05,
             max_tokens=200,
             top_p=1,
-            frequency_penalty=0.2,
+            frequency_penalty=0.0,
             presence_penalty=0.2,
         )
         line_bot_api.reply_message(
