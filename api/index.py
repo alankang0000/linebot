@@ -44,7 +44,7 @@ def echo(event):
             max_tokens=250,
             top_p=1,
             frequency_penalty=0.2,
-            presence_penalty=0.1,
+            presence_penalty=0.2,
             stop=["\"\"\"\n"+response_text+"\n\"\"\" "]
         )
         line_bot_api.reply_message(
